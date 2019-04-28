@@ -1,0 +1,28 @@
+*.pyc
+
+# Binary & Visual Studio files
+*.sqlite
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln
+*.sln.docstates
+.vs/
+VSWorkspaceState.json
+*.pyproj
+/.vscode/launch.json
+/.pytest_cache/v/cache/lastfailed
+/.pytest_cache/v/cache/nodeids
+/.pytest_cache/v/cache/stepwise
+
+# Visual Studio Code
+.vscode/
+
+# The reStructuredText extension to Visual Studio Code
+_build/
+_sources
+*.doctree
+*.pickle
+objects.inv
+.buildinfo

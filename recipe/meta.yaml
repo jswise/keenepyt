@@ -1,0 +1,18 @@
+package:
+  name: nearcdemo
+  version: "{{ load_setup_py_data().version }}"
+
+source:
+  path: ..
+
+build:
+  script: python setup.py install --single-version-externally-managed --record=record.txt
+
+requirements:
+  build: 
+    - python
+  run:
+    - python
+
+about:
+  summary: Conda and Python demonstration for a workshop at Northeast Arc User Group (NEARC), spring 2019.
