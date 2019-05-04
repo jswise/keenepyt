@@ -2,13 +2,18 @@ REM Initialize the variables, including folder paths.
 CALL config.bat
 
 REM Create the environment where we'll write the code.
-CALL create-env.bat nearcdemo
+CALL create-env.bat keene --clone arcgispro-py3
 
 REM Add a path file so Python can find the code.
-CALL conda develop %repo_dir%\src
+CALL %scripts_dir%\conda develop %repo_dir%\src
 
 REM Create the environment where we'll test the package.
-CALL create-env.bat localtest
+CALL create-env.bat localtest --clone arcgispro-py3
+
+REM Create the environment where we'll use the package.
+CALL create-env.bat main --clone arcgispro-py3
 
 REM Add the build channel where the package will be.
-CALL conda config --env --add channels %build_dir%
+CALL %scripts_dir%\conda config --env --add channels %build_dir%
+
+PAUSE

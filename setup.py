@@ -2,11 +2,11 @@ import os
 from setuptools import setup
 
 setup(
-  name='nearcdemo',
+  name='keenepyt',
   version=os.environ.get('version_number'),
   description='Conda and Python demonstration for a workshop at Northeast Arc User Group (NEARC), spring 2019.',
   packages=[
-    'nearcdemo'
+    'keenepyt'
   ],
   package_dir={'': 'src'}
 )
