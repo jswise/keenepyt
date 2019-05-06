@@ -10,9 +10,11 @@ REM Define the package's file name using the version number.
 SET file_name=keenepyt-%version_number%-py36_0.tar.bz2
 
 REM Define the conda Scripts directory, which depends on how things are installed.
-REM SET scripts_dir=C:\Program Files\ArcGIS\Pro\bin\Python\Scripts
-SET scripts_dir=%UserProfile%\AppData\Local\Programs\ArcGIS\Pro\bin\Python\Scripts
-REM SET scripts_dir=%UserProfile%\AppData\Local\Continuum\miniconda3\Scripts
+SET scripts_dir=%UserProfile%\AppData\Local\Continuum\miniconda3\Scripts
+SET conda_arcgis_user=%UserProfile%\AppData\Local\Programs\ArcGIS\Pro\bin\Python\Scripts
+SET conda_arcgis_default=C:\Program Files\ArcGIS\Pro\bin\Python\Scripts
+IF EXIST %conda_arcgis_user% SET scripts_dir=%conda_arcgis_user%
+IF EXIST %conda_arcgis_default% SET scripts_dir=%conda_arcgis_default%
 
 REM Define the user's environments directory, which also depends on how things are installed.
 REM SET envs_dir=%UserProfile%\AppData\Local\Programs\ArcGIS\Pro\bin\Python\envs
