@@ -4,7 +4,7 @@ REM Build the package in the default location.
 SET build_dir=%UserProfile%\AppData\Local\Continuum\miniconda3\conda-bld
 
 REM Build the package in a custom location.
-REM SET build_dir=C:\temp\sdk
+REM SET build_dir=C:\temp\keene
 
 REM Define the package's file name using the version number.
 SET file_name=keenepyt-%version_number%-py36_0.tar.bz2
