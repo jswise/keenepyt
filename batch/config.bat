@@ -1,6 +1,7 @@
 SET version_number=0.0.0
 
 REM Build the package in the default location.
+REM setlocal
 SET build_dir=%UserProfile%\AppData\Local\Continuum\miniconda3\conda-bld
 
 REM Build the package in a custom location.
@@ -21,7 +22,7 @@ REM SET envs_dir=%UserProfile%\AppData\Local\Programs\ArcGIS\Pro\bin\Python\envs
 SET envs_dir=%UserProfile%\AppData\Local\ESRI\conda\envs
 REM SET envs_dir=%UserProfile%\AppData\Local\Continuum\miniconda3\envs
 
-SET repo_dir=C:\GIS\NEARC\code\KeenePYT
+FOR %%a IN ("%~dp0\..") DO SET repo_dir=%%~fa
 
 REM REM Define channel directories (folders).
 REM SET dev_channel=\\phqWFS03\GISShare\conda\dev
