@@ -18,10 +18,4 @@ REM REM Add the build channel where the package will be.
 CALL activate localtest
 CALL conda config --env --add channels %build_dir%
 
-REM REM REM Create the environment where we'll use the package.
-REM CALL conda create -n main --clone arcgispro-py3 -y
-
-REM REM REM Add the deployment channel where the package will be.
-REM CALL conda config --env --add channels %build_dir%
-
 PAUSE
