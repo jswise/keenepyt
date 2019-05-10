@@ -5,7 +5,7 @@ ECHO Version number: %version_number%
 
 SET downloads_dir=%UserProfile%\Downloads
 
-REM Set the location of the code.
+REM Get the location of the code.
 FOR %%a IN ("%~dp0\..\..\..") DO SET nearc_dir=%%~fa
 echo %nearc_dir%
 SET repo_dir=%nearc_dir%\code\keenepyt
@@ -22,6 +22,9 @@ SET pro_scripts=C:\Program Files\ArcGIS\Pro\bin\Python\Scripts
 SET conda_arcgis_user=%UserProfile%\AppData\Local\Programs\ArcGIS\Pro\bin\Python\Scripts
 IF EXIST %conda_arcgis_user% SET pro_scripts=%conda_arcgis_user%
 ECHO ArcGIS Scripts folder: %pro_scripts%
+
+REM Get the location of the conda environments.
+SET envs_dir=%UserProfile%\AppData\Local\ESRI\conda\envs
 
 REM Define the production channel.
 SET prod_channel=%nearc_dir%\channel
