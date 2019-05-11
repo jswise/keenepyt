@@ -8,4 +8,5 @@ from keenepyt.core.thing import Thing
 class AvWx(Thing):
     """Wraps the aviation weather service."""
 
-    pass
+    def get_aireps(self):
+        url = 'https://aviationweather.gov/adds/dataserver_current/httpparam?dataSource=aircraftreports&requestType=retrieve&format=csv&hoursBeforeNow=1'
