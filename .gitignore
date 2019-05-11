@@ -12,9 +12,7 @@
 VSWorkspaceState.json
 *.pyproj
 /.vscode/launch.json
-/.pytest_cache/v/cache/lastfailed
-/.pytest_cache/v/cache/nodeids
-/.pytest_cache/v/cache/stepwise
+/.pytest_cache/*
 
 # Visual Studio Code
 .vscode/
