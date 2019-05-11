@@ -1,7 +1,15 @@
 """Provide tools to the toolbox."""
 
+from keenepyt.tools.getaireps import GetAireps
 from keenepyt.tools.hello import Hello
 from keenepyt.tools.helloinput import HelloInput
+
+class GetAirepsLocal(GetAireps):
+    def set_tags(self):
+        """Set the name that people see."""
+
+        self.category = 'Weather'
+        self.label = 'Get Aircraft Weather Reports'
 
 class HelloInputLocal(HelloInput):
 
@@ -20,4 +28,8 @@ class HelloLocal(Hello):
         self.label = 'Hello'
 
 def get_tools():
-    return [HelloInputLocal, HelloLocal]
+    return [
+        GetAirepsLocal,
+        HelloInputLocal,
+        HelloLocal
+    ]

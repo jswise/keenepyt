@@ -3,6 +3,8 @@ import pytest
 
 from keenepyt.avwx import AvWx
 
+GDB = r'c:\Projects\NEARC\Maps\KeenePYT\Default.gdb'
+
 @pytest.fixture
 def victim():
     return AvWx(log_level=logging.INFO)
@@ -16,7 +18,7 @@ def test_get_aireps_text(victim):
 
 def test_write_aireps_fc(victim):
     import arcpy
-    fc = victim.write_aireps_fc(r'C:\Temp\Corporate.gdb', 'Aireps', True)
+    fc = victim.write_aireps_fc(GDB, 'Aireps', True)
     assert arcpy.Exists(fc)
 
 if __name__ == '__main__':
