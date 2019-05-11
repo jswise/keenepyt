@@ -29,7 +29,7 @@ class HelloLocal(Hello):
 
 def get_tools():
     return [
-        GetAirepsLocal,
-        HelloInputLocal,
+        # GetAirepsLocal,
+        # HelloInputLocal,
         HelloLocal
     ]
