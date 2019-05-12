@@ -8,13 +8,13 @@ CALL activate dev
 CALL conda install -y pytest
 CALL conda install -y pylint
 
-REM REM Add a path file so Python can find the code.
-ECHO %repo_dir%\src > %envs_dir%\dev\Lib\site-packages\keenepyt.pth
+REM Add a path file so Python can find the code.
+%repo_dir%\src > %envs_dir%\dev\Lib\site-packages\keenepyt.pth
 
-REM REM Create the environment where we'll test the package.
+REM Create the environment where we'll test the package.
 CALL conda create -n localtest --clone arcgispro-py3 -y
 
-REM REM Add the build channel where the package will be.
+REM Add the build channel where the package will be.
 CALL activate localtest
 CALL conda config --env --add channels %build_dir%
 

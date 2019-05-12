@@ -8,6 +8,6 @@ CALL activate main
 
 REM Add the deployment channel where the package will be.
 IF NOT EXIST %prod_channel% mkdir %prod_channel%
-CALL conda config --env --add channels file://%prod_channel%
+CALL conda config --env --add channels %prod_channel%
 
 PAUSE
