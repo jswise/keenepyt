@@ -1,6 +1,6 @@
 ECHO OFF
 
-SET version_number=0.0.1
+SET version_number=0.1.0
 ECHO Version number: %version_number%
 
 SET downloads_dir=%UserProfile%\Downloads
