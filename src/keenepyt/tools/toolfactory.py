@@ -1,8 +1,16 @@
 """Provide tools to the toolbox."""
 
+from keenepyt.tools.extractpopupinfo import ExtractPopupInfo
 from keenepyt.tools.getaireps import GetAireps
 from keenepyt.tools.hello import Hello
 from keenepyt.tools.helloinput import HelloInput
+
+class ExtractPopupInfoLocal(ExtractPopupInfo):
+    def set_tags(self):
+        """Set the name that people see."""
+
+        self.category = 'Conversion'
+        self.label = 'Extract Popup Info'
 
 class GetAirepsLocal(GetAireps):
     def set_tags(self):
@@ -29,7 +37,8 @@ class HelloLocal(Hello):
 
 def get_tools():
     return [
-        # GetAirepsLocal,
         # HelloInputLocal,
-        HelloLocal
+        # HelloLocal
+        ExtractPopupInfoLocal,
+        GetAirepsLocal
     ]

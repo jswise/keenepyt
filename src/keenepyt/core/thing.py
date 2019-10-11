@@ -75,6 +75,17 @@ class Thing:
             self.reporter = ReporterArc(**kwargs)
         self.helpers.reporter = self.reporter
 
+    def raise_error(self, message):
+        """Log a message before raising an error.
+
+        :param message: The message to report
+        """
+
+        self.error(message)
+        class KeenePYTError(Exception):
+            pass
+        raise KeenePYTError(message)
+
     def warning(self, msg):
         """Show & log a warning message."""
 
