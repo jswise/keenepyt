@@ -13,7 +13,7 @@ class Reporter:
     log_level = None
     logger = None
 
-    def __init__(self, log_level=logging.INFO, **args):
+    def __init__(self, log_level=logging.INFO, **kwargs):
         """Start logging."""
 
         self.start_logging(log_level)

@@ -11,8 +11,8 @@ class Thing:
     helpers = None
     reporter = None
 
-    def __init__(self, helpers=None, **args):
-        self.init_helpers(helpers, **args)
+    def __init__(self, helpers=None, **kwargs):
+        self.init_helpers(helpers, **kwargs)
 
     def critical(self, msg):
         """Show & log a really important error message."""
@@ -34,7 +34,7 @@ class Thing:
 
         self.reporter.info(msg)
 
-    def init_helpers(self, helpers=None, **args):
+    def init_helpers(self, helpers=None, **kwargs):
         """Instantiate an object whose attributes will be helpful objects.
 
         The main purpose of the object is to hold the reporter,
@@ -62,17 +62,17 @@ class Thing:
         try:
             self.reporter = self.helpers.reporter
         except AttributeError:
-            self.init_reporter(**args)
+            self.init_reporter(**kwargs)
 
-    def init_reporter(self, **args):
+    def init_reporter(self, **kwargs):
         """Initialize the reporter that all objects will use."""
 
         execname = os.path.basename(sys.executable)
         if execname.lower() == 'python.exe':
-            self.reporter = Reporter(**args)
+            self.reporter = Reporter(**kwargs)
         else:
             from keenepyt.core.reporterarc import ReporterArc
-            self.reporter = ReporterArc(**args)
+            self.reporter = ReporterArc(**kwargs)
         self.helpers.reporter = self.reporter
 
     def warning(self, msg):

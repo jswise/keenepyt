@@ -15,10 +15,10 @@ class PYTTool(Thing):
     parameter_info = None
     tools = None
 
-    def __init__(self, helpers=None, **args):
+    def __init__(self, helpers=None, **kwargs):
         """Initialize basic tool properties."""
 
-        super().__init__(helpers, **args)
+        super().__init__(helpers, **kwargs)
         self.description = 'Terracon tool'
         self.canRunInBackground = True
         self.alias = self.__class__.__name__
